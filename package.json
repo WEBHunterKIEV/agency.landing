@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/WEBHunterKIEV/agency.landing/issues"
   },
-  "homepage": "https://github.com/WEBHunterKIEV/agency.landing#readme"
+  "homepage": "https://github.com/WEBHunterKIEV/agency.landing#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "gulp": "^4.0.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "^4.0.2"
+  }
 }
