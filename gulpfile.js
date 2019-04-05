@@ -1,10 +1,11 @@
-var gulp = require('gulp');
-var browserSync = require('browser-sync').create();
-var pug = require('gulp-pug');
-var sass = require('gulp-sass');
-var spritesmith = require('gulp.spritesmith');
-var rimraf = require('rimraf');
-var rename = require('gulp-rename');
+const gulp = require('gulp');
+const browserSync = require('browser-sync').create();
+const pug = require('gulp-pug');
+const sass = require('gulp-sass');
+const spritesmith = require('gulp.spritesmith');
+const rimraf = require('rimraf');
+const rename = require('gulp-rename');
+const autoprefixer = require('gulp-autoprefixer');
 
 
 // Static server
@@ -80,14 +81,30 @@ gulp.task('copy', gulp.parallel('copy:fonts','copy:images'));
 // WATCHERS
 gulp.task('watch', function() {
     gulp.watch('dev/template/**/*.pug', gulp.series('compile:pug'));
-    gulp.watch('dev/styles/**/*.scss', gulp.series('compile:sass'));
+    gulp.watch('dev/styles/**/*.scss', gulp.series('compile:sass','autoprefixer'));
 })
 
 
+// autoprefixer
+gulp.task('autoprefixer', () =>
+    gulp.src('dev/styles/**/*.scss')
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
+        .pipe(gulp.dest('distr/css'))
+);
+
+
+// default
 gulp.task('default', gulp.series(
     'clean',
-    gulp.parallel('compile:pug','compile:sass','sprite','copy'),
+    gulp.parallel('compile:pug','compile:sass','autoprefixer','sprite','copy'),
     gulp.parallel('watch','server')
 ))
+
+
+
+
 
    
