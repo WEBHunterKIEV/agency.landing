@@ -26,5 +26,9 @@
     "gulp.spritesmith": "^6.9.0",
     "rename": "^1.0.4",
     "rimraf": "^2.6.3"
+  },
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "normalize.scss": "^0.1.0"
   }
 }
