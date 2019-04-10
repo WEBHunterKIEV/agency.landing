@@ -1,10 +1,37 @@
-h1 {
-    background-color: rgb(255, 255, 255);
+@mixin flex_center {
     display: flex;
     justify-content: center;
-    align-content: center;
-    height: 50vh;
-    }
-body {
+    align-items: center;
+}
 
+body {
+    background-color: #d7d5cb;
+    margin: 0;
+}
+nav {
+    position: relative;
+    background-color: #222;
+    height: 10vw;
+    overflow: hidden;
+    padding: 0 5vw;
+}
+.navi_wrap {
+    @include flex_center;
+    height: 100%;
+}
+.navi {
+    @include flex_center;
+    flex-flow: row nowrap;
+    li {
+        color: #d7d5cb;
+        list-style: none;
+        padding: 2vw;
+        text-align: center;
+    }
+}
+.logo {
+    position: absolute;
+    width: 18vw;
+    margin-left: 3vw;
+    margin-top: -3.1vw;
 }
