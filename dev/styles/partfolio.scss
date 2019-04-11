@@ -1,4 +1,59 @@
 .partfolio {
     margin-top: 5vmax;
     font-size: 1.3vmax;
+    width: 100%;
+    h2 {
+        text-align: center;
+    }
+    .myWorks {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        background-color: #fff;
+        box-shadow: 0px 1px 10px 1px rgba(68,68,68,0.7);
+        .myWorks_imgArea {
+            position: relative;
+            height: 25vmax;
+            div {
+                position: absolute;
+                top: 0px;
+                left: 0px; 
+                margin: 2vmax; 
+                height: 20vmax; 
+                width: 20vmax; 
+                transform-origin: right;
+                img {
+                    box-shadow: 0px 6px 6px 1px rgba(68,68,68,0.8);
+                }       
+            }
+            div:first-child {
+                z-index: 1;
+                transform: rotate(7deg);
+            }
+            div:last-child {
+                z-index: 2;
+                transform: rotate(2deg);
+            }
+            .myWorks_imgArea_picture {
+                width: 100%;
+                z-index: 3;
+                transform: rotate(-5deg);
+            }
+            .skrepka {
+                display: flex;
+                justify-content: flex-end;
+                z-index: 4;
+                margin-top: -1vw;
+                img {
+                    width: 8vw;
+                    height: 12vw;
+                    box-shadow: none;
+                }
+            }
+        }
+        .myWorks_textArea {
+            width: 30vw;
+            margin: 3vw;
+        }        
+    }
 }
