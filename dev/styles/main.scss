@@ -1,5 +1,6 @@
 @import "../../node_modules/font-awesome/scss/font-awesome.scss";
 @import "../../node_modules/normalize.scss/normalize.scss";
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&subset=cyrillic');
 
 @mixin flex_center {
     display: flex;
@@ -10,31 +11,52 @@
 body {
     background-color: #d7d5cb;
     margin: 0;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 nav {
+    display: flex;
+    justify-content: space-around;
     position: relative;
     background-color: #222;
     height: 10vw;
     overflow: hidden;
-    padding: 0 5vw;
+    padding: 2vw 5vw 0 5vw;
+    box-shadow: 0px 1px 10px 1px rgba(68,68,68,0.7);
 }
 .navi_wrap {
-    @include flex_center;
+    display: inline-flex;
     height: 100%;
 }
 .navi {
     @include flex_center;
     flex-flow: row nowrap;
+    padding: 0;
     li {
+        display: inline-block;
+        vertical-align: middle;
         color: #d7d5cb;
         list-style: none;
-        padding: 2vw;
         text-align: center;
+        font-size: 1.2vmax;
+        &:after {
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            width: .3vw;
+            height: .3vw;
+            background-color: #3A3A3A;
+            border-radius: 50%;
+            margin: 0 1.5vw;
+        }
+        &:last-child:after {
+            display: none;
+        }
     }
 }
 .logo {
     position: absolute;
     width: 18vw;
-    margin-left: 3vw;
-    margin-top: -3.1vw;
+    left: 7vw;
+    top: -2vw;
 }
+
