@@ -4,24 +4,30 @@
     width: 100%;
     h2 {
         text-align: center;
+        margin: 2vmax auto 5vmax auto;
     }
     .myWorks {
         display: flex;
         flex-flow: row;
-        justify-content: space-between;
+        justify-content: space-around;
         position: relative;
         background-color: transparent;
         //box-shadow: 0px 1px 10px 1px rgba(68,68,68,0.7);
+        img {
+            width: 2vw;
+            height: 25vmax;
+        }
         .myWorks_imgArea {
             position: relative;
             height: 25vmax;
+            width: 25vmax;
             div {
                 position: absolute;
                 top: 0px;
                 left: 0px; 
-                margin: 2vmax; 
-                height: 20vmax; 
-                width: 20vmax; 
+                margin: 1vmax; 
+                height: 100%; 
+                width: 100%; 
                 transform-origin: right;
                 img {
                     width: 100%;
@@ -30,27 +36,52 @@
             }
             div:first-child {
                 z-index: 1;
-                transform: rotate(7deg);
             }
             div:last-child {
                 z-index: 2;
-                transform: rotate(2deg);
             }
             .myWorks_imgArea_picture {
                 z-index: 3;
-                transform: rotate(-5deg);
+            }
+            .deg7 {
+                transform: rotate(7deg);
+            }
+            .deg2 {
+                transform: rotate(2deg);
+            }
+            .deg-3 {
+                transform: rotate(-3deg);
+            }
+            .deg4 {
+                transform: rotate(4deg);
             }
             .skrepka {
                 display: flex;
                 justify-content: flex-end;
+                position: relative;
                 z-index: 4;
-                transform: rotate(7deg);
+                .skrepka_bg {
+                    position: absolute;
+                    width: 4vw;
+                    height: 10vw;
+                    left: auto !important;
+                    right: 0 !important;
+                    margin: 0 .3vmax;
+                    z-index: 5;
+                }
+                .skrepka_bg_green {
+                    background-color: chartreuse;
+                }
+                .skrepka_bg_orange {
+                    background-color: orange;
+                }
                 img {
-                    margin-top: -.37vmax;
+                    margin-top: -.59vmax;
                     margin-right: 1vmax;
                     width: 3vw;
                     height: 8vw;
                     box-shadow: none;
+                    z-index: 6;
                 }
             }
         }
